@@ -1,0 +1,38 @@
+Cool numbers pyramid excersise we worked on today with additional for loop I've added to fix the graphical pyramid.
+The number of specific spaces at each row is the key of success (read code description ).
+
+
+
+//Sample exercise we worked on at our lesson 28/02/2022  
+             // Ido - C#
+            Console.WriteLine("enter number of rows: ");
+            int rows = int.Parse(Console.ReadLine());
+            if (rows > 30)
+                Console.WriteLine("error");
+
+            else
+            {
+                // ציון שורה בפירדמידה
+                for (int i = 0; i < rows; i++)
+                {
+                    // קידום רווחים 
+                    // ככל שיורדים שורה רוצים להוסיף פחות רווחים
+                    for (int j = 0; j < rows - i; j++)
+                        Console.Write("  ");
+                    
+                    
+                    // ציון עמודה אחת בפירמידה
+                    for (int j = 1; j < (i + 1); j++)
+                    {
+                        Console.Write(j + " ");
+                    }
+                    Console.Write((i + 1) + " ");
+                    for (int j = (i + 1); j > 1; j--)
+                    {
+                        Console.Write(j - 1 + " ");
+                    }
+
+                    Console.WriteLine();
+                }
+            }
+            

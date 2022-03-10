@@ -1,0 +1,89 @@
+#At this lesson we studied While loop + solved question from test
+
+
+
+public static void Main(string[] args)
+        {
+            Console.WriteLine("Enter rows: ");
+            int n = int.Parse(Console.ReadLine());
+            int spaces = 1;
+            int startSpace = n;
+            if (n > 53 || n % 2 == 0)
+                Console.WriteLine("Error");
+            else
+            {
+                // קודקוד פתוח
+                for (int i = 0; i < startSpace; i++)
+                {
+                    Console.Write(" ");
+                }
+                Console.WriteLine("*"); 
+                startSpace -= 1;
+                // קודקוד פתוח
+                // התרחבות
+                for (int j = 0; j < n / 2; j++, spaces += 2) 
+                {
+                    for (int i = 0; i < startSpace; i++)
+                    {
+                        Console.Write(" ");
+                    }
+                    Console.Write("*");
+                    for (int h = 0; h < spaces; h++)
+                        Console.Write(" ");
+                    Console.Write("*");
+                    startSpace -= 1;
+                    Console.WriteLine();
+                }
+                // התרחבות
+                startSpace += 2;
+                spaces -= 4;
+                // הצטמצמות
+                for (int j = (n / 2) + 2; j < n; j++, spaces -= 2) 
+                {
+                    for (int i = 0; i < startSpace; i++)
+                    {
+                        Console.Write(" ");
+                    }
+                    Console.Write("*");
+                    for (int h = 0; h < spaces; h++)
+                        Console.Write(" ");
+                    Console.Write("*");
+                    startSpace += 1;
+                    Console.WriteLine();
+                }
+                // הצטמצמות
+                // קודקוד סוגר
+                for (int i = 0; i < startSpace; i++)
+                {
+                    Console.Write(" ");
+                }
+                Console.WriteLine("*");
+                // קודקוד סוגר
+
+
+                // while - tirgool
+                int grade = int.Parse(Console.ReadLine());
+                int counter = 0, sum = 0, avg = 0;
+                while (grade <= 100 && grade >= 0)
+                {
+                    sum += grade;
+                    counter++;
+                    grade = int.Parse(Console.ReadLine());
+                }
+                avg = sum / counter;
+                Console.WriteLine(avg);
+
+                // while - tirgool 2
+                string name = Console.ReadLine();
+                while(name != "end")
+                {
+                    Console.WriteLine(name);
+                    name = Console.ReadLine();
+                }
+                Console.WriteLine("done");
+
+
+
+                  
+            }
+        }

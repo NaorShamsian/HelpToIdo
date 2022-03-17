@@ -1,0 +1,42 @@
+  // ex 29
+            int counterAll = 0, counterTwo = 0, counterUpperFive = 0, counterTen = 0;
+            for (int i = 1; i <= 100; i++)
+            {
+                Console.WriteLine("Student number " + i + " :");
+                int movies, partiers, books;
+                Console.WriteLine("How many books did you read ?");
+                books = int.Parse(Console.ReadLine());
+                Console.WriteLine("How many parties have you been ?");
+                partiers = int.Parse(Console.ReadLine());
+                Console.WriteLine("How many movies did you watch ?");
+                movies = int.Parse(Console.ReadLine());
+                if (books >= 1 && partiers >= 1 && movies >= 1)
+                    counterAll++;
+                if (books == 0 || partiers == 0 || movies == 0)
+                    counterTwo++;
+                if (books > 5 || partiers > 5 || movies > 5)
+                    counterUpperFive++;
+                if (books > 10 && partiers > 10 && movies > 10)
+                    counterTen++;
+
+            }
+            Console.WriteLine("a: " + counterAll);
+            Console.WriteLine("b: " + counterTwo);
+            Console.WriteLine("c: " + counterUpperFive);
+            Console.WriteLine("d: " + counterTen);
+
+            // ex 34
+            int number  , counter = 0;
+            Console.WriteLine("Enter number, -1 to stop: ");
+            number = int.Parse(Console.ReadLine());
+            while(number != -1)
+            {
+                if (number >= 100)
+                    counter++;
+                if (number >= 10 && number < 100)
+                    Console.WriteLine("the sum of the number is: " + (number % 10 + number / 10));
+                
+                Console.WriteLine("Enter number, -1 to stop: ");
+                number = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine("the number of appearences of 3 digit number is : " + counter);
